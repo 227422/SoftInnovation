@@ -1,0 +1,13 @@
+{
+  "error": {
+    "code": "validation_error",
+    "message": "输入内容不符合要求，请检查后重试",
+    "request_id": "f6f54eae0eb647ffa793ab852885ae69",
+    "details": [
+      {
+        "field": "body.grade",
+        "type": "int_type"
+      }
+    ]
+  }
+}

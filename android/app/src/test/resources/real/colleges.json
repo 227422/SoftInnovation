@@ -1,0 +1,222 @@
+{
+  "items": [
+    {
+      "id": "csu-college-b1e6829b6b038b9c",
+      "school_id": "csu",
+      "name": "交通运输工程学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-71361c14acc8eb02",
+      "school_id": "csu",
+      "name": "人文学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-fdb0bebbee634785",
+      "school_id": "csu",
+      "name": "体育教研部",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-e0f4f92d47911226",
+      "school_id": "csu",
+      "name": "公共管理学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-838335fa4f97e17d",
+      "school_id": "csu",
+      "name": "冶金与环境学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-2a8b4fa7725e663f",
+      "school_id": "csu",
+      "name": "化学化工学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-adf60105fabbc3d6",
+      "school_id": "csu",
+      "name": "商学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-d2bcee73f0f0a6b7",
+      "school_id": "csu",
+      "name": "土木工程学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-07ec2a87e81f0653",
+      "school_id": "csu",
+      "name": "地球科学与信息物理学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-2ebbd732ac335b33",
+      "school_id": "csu",
+      "name": "外国语学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-f9e6cf747faf9389",
+      "school_id": "csu",
+      "name": "建筑与艺术学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-ef95aa5f181e72ab",
+      "school_id": "csu",
+      "name": "数学与统计学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-8c66d9b6a6a3a49e",
+      "school_id": "csu",
+      "name": "机电工程学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-4ac95ebde0ebd4a2",
+      "school_id": "csu",
+      "name": "材料科学与工程学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-c0ee1e31903c04b4",
+      "school_id": "csu",
+      "name": "法学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-c78a9b8d9367463a",
+      "school_id": "csu",
+      "name": "湘雅公共卫生学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-14c185278ee6bae6",
+      "school_id": "csu",
+      "name": "湘雅医学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-5c642adbf9ed089c",
+      "school_id": "csu",
+      "name": "湘雅口腔医学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-bb50b3a48be04171",
+      "school_id": "csu",
+      "name": "湘雅基础医学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-2ea64a8b0136f02f",
+      "school_id": "csu",
+      "name": "湘雅护理学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-f58011089570c167",
+      "school_id": "csu",
+      "name": "湘雅药学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-000c555fdf9a4658",
+      "school_id": "csu",
+      "name": "物理学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-5b8d40b29e67e1c5",
+      "school_id": "csu",
+      "name": "生命科学学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-c11725623f79a2ff",
+      "school_id": "csu",
+      "name": "电子信息学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-aad7b922356b716b",
+      "school_id": "csu",
+      "name": "粉末冶金研究院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-147c3498e4d41cf8",
+      "school_id": "csu",
+      "name": "能源科学与工程学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-ac7e7f23a9aff153",
+      "school_id": "csu",
+      "name": "自动化学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-70de3a80ef24d4d4",
+      "school_id": "csu",
+      "name": "计算机学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-bf9ff405e3e84aed",
+      "school_id": "csu",
+      "name": "资源与安全工程学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-19aad90a06c64a75",
+      "school_id": "csu",
+      "name": "资源加工与生物工程学院",
+      "code": "",
+      "notes": ""
+    },
+    {
+      "id": "csu-college-2f7aad11f65e31c2",
+      "school_id": "csu",
+      "name": "马克思主义学院",
+      "code": "",
+      "notes": ""
+    }
+  ],
+  "message": null
+}

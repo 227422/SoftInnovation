@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "value": 1,
+      "label": "1年级"
+    },
+    {
+      "value": 2,
+      "label": "2年级"
+    },
+    {
+      "value": 3,
+      "label": "3年级"
+    },
+    {
+      "value": 4,
+      "label": "4年级"
+    },
+    {
+      "value": 5,
+      "label": "5年级"
+    },
+    {
+      "value": 6,
+      "label": "6年级"
+    },
+    {
+      "value": 7,
+      "label": "7年级"
+    },
+    {
+      "value": 8,
+      "label": "8年级"
+    }
+  ]
+}

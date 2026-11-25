@@ -1,0 +1,9 @@
+{
+  "school_id": "sample-school",
+  "college_id": "sample-college",
+  "major_id": "sample-major",
+  "grade": 2,
+  "education_stage": "undergraduate",
+  "admission_year": null,
+  "expected_version": 9223372036854775806
+}

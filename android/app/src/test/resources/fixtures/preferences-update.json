@@ -1,0 +1,11 @@
+{
+  "course_ids": [],
+  "skill_ids": [
+    "sample-skill"
+  ],
+  "goal_ids": [],
+  "interest_ids": [
+    "sample-interest"
+  ],
+  "expected_version": 0
+}

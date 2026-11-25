@@ -1,0 +1,21 @@
+{
+  "items": [
+    {
+      "id": "interest_science_technology",
+      "name": "科学与技术"
+    },
+    {
+      "id": "interest_humanities_social",
+      "name": "人文与社会"
+    },
+    {
+      "id": "interest_arts_sports",
+      "name": "文艺与体育"
+    },
+    {
+      "id": "interest_volunteering",
+      "name": "志愿与社会实践"
+    }
+  ],
+  "message": "这些选项仅供用户自述，非资格核验"
+}

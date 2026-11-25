@@ -1,0 +1,88 @@
+{
+  "contract_version": "undergrad-app/2",
+  "profile_version": 2,
+  "preferences_version": 5,
+  "policy_version": "sample-policy-set-1",
+  "rules_version": "sample-rules-1",
+  "items": [
+    {
+      "notice_id": "sample-title-only",
+      "title": "【合成】虚构大学学生事项",
+      "source_name": "虚构大学教务处",
+      "category": "unknown",
+      "category_pending": true,
+      "published_at": "2026-11-08T16:30:00+08:00",
+      "time_windows": [],
+      "date_labels": [
+        {
+          "window_id": null,
+          "text": "时间待确认",
+          "state": "unknown",
+          "group": null
+        }
+      ],
+      "benefits": {
+        "items": [],
+        "priority_tier": "none",
+        "confirmation": "pending",
+        "policy_version": "sample-policy-set-1"
+      },
+      "benefit_labels": [
+        {
+          "benefit_id": null,
+          "text": "收益待确认",
+          "verification": "pending"
+        }
+      ],
+      "match": {
+        "state": "possible",
+        "reasons": [
+          "只取得标题"
+        ],
+        "eligibility": "unknown",
+        "conditions": [],
+        "groups": [],
+        "evaluated_profile_version": 2
+      },
+      "lifecycle": {
+        "home_visible": true,
+        "state": "unknown",
+        "reason": "期限及受众待核对",
+        "evaluated_at": "2026-11-09T09:30:00+08:00"
+      },
+      "follow": {
+        "notice_id": "sample-title-only",
+        "starred": false,
+        "followed_at": null,
+        "version": 0
+      },
+      "content_version": "sample-title-version-1",
+      "latest_version": "sample-title-version-1",
+      "evaluation_context": {
+        "contract_version": "undergrad-app/2",
+        "profile_version": 2,
+        "preferences_version": 5,
+        "policy_version": "sample-policy-set-1",
+        "rules_version": "sample-rules-1",
+        "facts_version": "sample-title-facts-1"
+      },
+      "body_status": "title_only",
+      "access_reason": "login_required",
+      "processing": false,
+      "uncertainties": [
+        "正文需通过虚构官方入口查看。"
+      ],
+      "audience_labels": [],
+      "status_labels": []
+    }
+  ],
+  "total": 1,
+  "offset": 0,
+  "limit": 20,
+  "evaluated_at": "2026-11-09T09:30:00+08:00",
+  "last_updated_at": null,
+  "query_fingerprint": "sample-daily-query",
+  "list_revision": "sample-daily-revision-1",
+  "coverage_url": "/v2/coverage?school_id=sample-school",
+  "ranking_strategy_version": "benefit-tier-v1"
+}

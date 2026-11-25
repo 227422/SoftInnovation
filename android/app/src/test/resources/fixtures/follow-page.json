@@ -1,0 +1,163 @@
+{
+  "contract_version": "undergrad-app/2",
+  "profile_version": 2,
+  "preferences_version": 5,
+  "policy_version": "sample-policy-set-1",
+  "rules_version": "sample-rules-1",
+  "items": [
+    {
+      "notice_id": "sample-competition",
+      "title": "【合成】虚构大学实验设计竞赛",
+      "source_name": "虚构大学教务处",
+      "category": "research_innovation",
+      "category_pending": false,
+      "published_at": "2026-10-01",
+      "time_windows": [
+        {
+          "id": "sample-window-registration",
+          "action_id": "sample-registration",
+          "track_id": null,
+          "audience_group_id": "sample-audience-group",
+          "audience_complete": true,
+          "kind": "registration",
+          "label": "报名",
+          "audience_text": "虚构大学本科生",
+          "start": {
+            "value": "2026-10-01",
+            "precision": "date"
+          },
+          "end": {
+            "value": "2026-10-10T17:00:00+08:00",
+            "precision": "datetime"
+          },
+          "explicit_long_term": false,
+          "student_action": true,
+          "verification": "confirmed",
+          "raw_text": "2026年10月1日至10月10日17:00报名（北京时间）。",
+          "uncertainty_reason": null,
+          "evidence_ids": [
+            "sample-evidence-window"
+          ],
+          "state": "closed",
+          "applicability": "applicable"
+        }
+      ],
+      "date_labels": [
+        {
+          "window_id": "sample-window-registration",
+          "text": "报名已截止（10月10日 17:00）",
+          "state": "closed",
+          "group": "handling"
+        }
+      ],
+      "benefits": {
+        "items": [
+          {
+            "id": "sample-benefit-volunteer",
+            "type": "volunteer_hours",
+            "label": "有志愿时长",
+            "verification": "confirmed",
+            "applicability": "applicable",
+            "evidence_ids": [
+              "sample-evidence-volunteer"
+            ]
+          },
+          {
+            "id": "sample-benefit-credit",
+            "type": "innovation_credit",
+            "label": "有创新学分",
+            "verification": "pending",
+            "applicability": "unknown",
+            "evidence_ids": [
+              "sample-evidence-policy"
+            ]
+          }
+        ],
+        "priority_tier": "volunteer",
+        "confirmation": "confirmed",
+        "policy_version": "sample-policy-set-1"
+      },
+      "benefit_labels": [
+        {
+          "benefit_id": "sample-benefit-volunteer",
+          "text": "有志愿时长",
+          "verification": "confirmed"
+        },
+        {
+          "benefit_id": "sample-benefit-credit",
+          "text": "创新学分待确认",
+          "verification": "pending"
+        }
+      ],
+      "match": {
+        "state": "relevant",
+        "reasons": [
+          "原文明确面向本科生"
+        ],
+        "eligibility": "unknown",
+        "conditions": [
+          {
+            "condition_id": "sample-condition-undergrad",
+            "state": "met",
+            "reason": "用户已确认本科身份"
+          }
+        ],
+        "groups": [
+          {
+            "group_id": "sample-audience-group",
+            "state": "met"
+          }
+        ],
+        "evaluated_profile_version": 2
+      },
+      "lifecycle": {
+        "home_visible": false,
+        "state": "expired",
+        "reason": "已超过报名后保留期限",
+        "evaluated_at": "2026-11-09T09:30:00+08:00"
+      },
+      "follow": {
+        "notice_id": "sample-competition",
+        "starred": true,
+        "followed_at": "2026-10-03T15:20:00+08:00",
+        "version": 2
+      },
+      "content_version": "sample-notice-version-1",
+      "latest_version": "sample-notice-version-2",
+      "evaluation_context": {
+        "contract_version": "undergrad-app/2",
+        "profile_version": 2,
+        "preferences_version": 5,
+        "policy_version": "sample-policy-set-1",
+        "rules_version": "sample-rules-1",
+        "facts_version": "sample-facts-3"
+      },
+      "body_status": "partial",
+      "access_reason": null,
+      "processing": true,
+      "uncertainties": [
+        "当前展示上一可用原件，最新版尚待处理。",
+        "尚需核对不同培养方案的认定条件"
+      ],
+      "audience_labels": [
+        {
+          "group_id": "sample-audience-group",
+          "text": "虚构大学本科生",
+          "evidence_ids": [
+            "sample-evidence-audience"
+          ]
+        }
+      ],
+      "status_labels": []
+    }
+  ],
+  "total": 1,
+  "offset": 0,
+  "limit": 20,
+  "evaluated_at": "2026-11-09T09:30:00+08:00",
+  "last_updated_at": "2026-11-08T18:30:00+08:00",
+  "query_fingerprint": "sample-follows-query",
+  "list_revision": "sample-follows-revision-1",
+  "coverage_url": "/v2/coverage?school_id=sample-school",
+  "ranking_strategy_version": "follow-time-v1"
+}

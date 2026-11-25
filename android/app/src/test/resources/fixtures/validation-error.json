@@ -1,0 +1,13 @@
+{
+  "error": {
+    "code": "validation_error",
+    "message": "输入内容不符合要求，请检查后重试",
+    "request_id": "sample-request",
+    "details": [
+      {
+        "field": "body.expected_version",
+        "type": "int_type"
+      }
+    ]
+  }
+}

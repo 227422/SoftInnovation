@@ -1,0 +1,21 @@
+{
+  "items": [
+    {
+      "id": "goal_research",
+      "name": "了解科研机会"
+    },
+    {
+      "id": "goal_competition",
+      "name": "参与学科竞赛"
+    },
+    {
+      "id": "goal_further_study",
+      "name": "了解升学交流"
+    },
+    {
+      "id": "goal_employment",
+      "name": "了解实习就业"
+    }
+  ],
+  "message": "这些选项仅供用户自述，非资格核验"
+}

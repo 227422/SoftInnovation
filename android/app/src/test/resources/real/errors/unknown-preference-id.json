@@ -1,0 +1,13 @@
+{
+  "error": {
+    "code": "validation_error",
+    "message": "偏好选项重复或不可用，请检查后重试",
+    "request_id": "dc403ddf6221476b9b0a0a137fe4cdaa",
+    "details": [
+      {
+        "field": "body.skill_ids",
+        "type": "value_error"
+      }
+    ]
+  }
+}

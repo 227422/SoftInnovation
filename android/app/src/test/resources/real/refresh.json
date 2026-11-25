@@ -1,0 +1,8 @@
+{
+  "user": {
+    "id": "06af79fd-b215-4568-bbe9-8abc47b9721d",
+    "email": "android-real-20261117195057-c2a4dc@example.com"
+  },
+  "expires_at": 1797508257,
+  "csrf_token": "<redacted-csrf-token>"
+}
