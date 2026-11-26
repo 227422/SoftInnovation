@@ -1,7 +1,0 @@
-{
-  "error": {
-    "code": "email_in_use",
-    "message": "该邮箱已注册，请登录",
-    "request_id": "336a739fdb434193b61ab7230e93821d"
-  }
-}

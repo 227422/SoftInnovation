@@ -1,7 +1,0 @@
-{
-  "error": {
-    "code": "key_payload_conflict",
-    "message": "该提交标识已用于其他内容，请使用新的提交标识",
-    "request_id": "0626d0d2513c4ee9a1fe1ad76108c924"
-  }
-}

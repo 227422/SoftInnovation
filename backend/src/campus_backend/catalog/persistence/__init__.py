@@ -1,1 +1,0 @@
-"""Catalog SQLAlchemy storage implementation."""

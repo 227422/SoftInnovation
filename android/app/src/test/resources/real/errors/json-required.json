@@ -1,7 +1,0 @@
-{
-  "error": {
-    "code": "json_required",
-    "message": "请使用JSON提交数据",
-    "request_id": "8b956f42fae548078e0c4bfca580a8db"
-  }
-}

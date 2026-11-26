@@ -1,7 +1,0 @@
-{
-  "error": {
-    "code": "payload_too_large",
-    "message": "提交内容过大",
-    "request_id": "d87c319ec4674980a9e1d39794348efa"
-  }
-}
