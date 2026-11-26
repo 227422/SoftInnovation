@@ -1,0 +1,13 @@
+{
+  "error": {
+    "code": "validation_error",
+    "message": "输入内容不符合要求，请检查后重试",
+    "request_id": "168fb3c7548d4e9884aa3ee162559ec0",
+    "details": [
+      {
+        "field": "header.Idempotency-Key",
+        "type": "string_too_long"
+      }
+    ]
+  }
+}

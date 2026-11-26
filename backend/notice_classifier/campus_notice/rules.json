@@ -1,0 +1,206 @@
+{
+  "version": "2026.10.30.1",
+  "categories": [
+    {
+      "id": "academic",
+      "label": "学业与教务",
+      "patterns": [
+        "选课|考试|补考|四六级|四级|六级|学籍|转专业|毕业|培养方案"
+      ]
+    },
+    {
+      "id": "financial_aid",
+      "label": "奖助与学生权益",
+      "patterns": [
+        "奖学金|助学|资助|贷款|困难认定|勤工助学|申诉"
+      ]
+    },
+    {
+      "id": "research_innovation",
+      "label": "科研、竞赛与创新",
+      "patterns": [
+        "大创|创新创业|科研|学科竞赛|程序设计竞赛|项目立项|结题"
+      ]
+    },
+    {
+      "id": "development",
+      "label": "升学、交流与就业",
+      "patterns": [
+        "推免|保研|升学|交换|访学|实习|就业|招聘|交流项目"
+      ]
+    },
+    {
+      "id": "campus_activity",
+      "label": "校园活动与社会实践",
+      "patterns": [
+        "讲座|培训|社团|志愿|社会实践|运动会|文艺|文化节"
+      ]
+    },
+    {
+      "id": "campus_service",
+      "label": "校园生活与公共服务",
+      "patterns": [
+        "停水|停电|食堂|班车|校园网|图书馆|宿舍|供水|供电"
+      ]
+    },
+    {
+      "id": "health_safety",
+      "label": "健康与安全",
+      "patterns": [
+        "体检|医保|医疗|心理健康|疫苗|安全|疏散|撤离"
+      ]
+    },
+    {
+      "id": "student_affairs",
+      "label": "党团与学生事务",
+      "patterns": [
+        "党团|团籍|团员|学生证|证明办理|学生会|学生组织|团费"
+      ]
+    }
+  ],
+  "types": [
+    {
+      "id": "lecture",
+      "label": "讲座或培训",
+      "level": 3,
+      "category": "campus_activity",
+      "patterns": [
+        "讲座|培训报名|培训通知"
+      ]
+    },
+    {
+      "id": "emergency",
+      "label": "需立即行动的安全事项",
+      "level": 1,
+      "category": "health_safety",
+      "patterns": [
+        "紧急疏散|立即撤离|紧急避险"
+      ]
+    },
+    {
+      "id": "academic_requirement",
+      "label": "考试、选课或关键学业办理",
+      "level": 1,
+      "category": "academic",
+      "patterns": [
+        "(?:考试|四[、，]?六级|四级|六级|补考|重修).{0,18}(?:报名|安排|通知)|选课|学籍注册|转专业|毕业手续|学籍.{0,10}办理"
+      ]
+    },
+    {
+      "id": "financial_aid_application",
+      "label": "奖助申请",
+      "level": 1,
+      "category": "financial_aid",
+      "patterns": [
+        "(?:奖学金|助学金|助学贷款|困难认定).{0,18}(?:申报|申请|报名|认定)|(?:申报|申请).{0,18}(?:奖学金|助学金|助学贷款)"
+      ]
+    },
+    {
+      "id": "competition",
+      "label": "竞赛机会",
+      "level": 2,
+      "category": "research_innovation",
+      "patterns": [
+        "竞赛|大赛|挑战杯"
+      ]
+    },
+    {
+      "id": "research",
+      "label": "科研或创新项目",
+      "level": 2,
+      "category": "research_innovation",
+      "patterns": [
+        "大创|科研实践|科研项目|创新创业项目|项目结题|项目立项"
+      ]
+    },
+    {
+      "id": "exchange",
+      "label": "交流与升学机会",
+      "level": 2,
+      "category": "development",
+      "patterns": [
+        "交换项目|交流项目|访学|推免|保研|升学|暑期学校"
+      ]
+    },
+    {
+      "id": "career",
+      "label": "实习与就业机会",
+      "level": 2,
+      "category": "development",
+      "patterns": [
+        "实习|校园招聘|招聘会|招聘宣讲|就业"
+      ]
+    },
+    {
+      "id": "service_notice",
+      "label": "常规生活服务提示",
+      "level": 4,
+      "category": "campus_service",
+      "patterns": [
+        "停水|停电|供水|供电|食堂|班车|校园网.{0,10}(?:维护|中断)|网络维护|闭馆|开馆时间|宿舍维修"
+      ]
+    },
+    {
+      "id": "health_service",
+      "label": "健康服务或常规办理",
+      "level": 3,
+      "category": "health_safety",
+      "patterns": [
+        "体检|医保|疫苗|门诊|心理健康"
+      ]
+    },
+    {
+      "id": "campus_activity",
+      "label": "一般校园活动",
+      "level": 3,
+      "category": "campus_activity",
+      "patterns": [
+        "志愿|社团|社会实践|运动会|文艺|文化节|体育比赛|球赛"
+      ]
+    },
+    {
+      "id": "student_affairs",
+      "label": "日常学生事务",
+      "level": 3,
+      "category": "student_affairs",
+      "patterns": [
+        "学生证|证明办理|团籍|党团|团费|学生会|学生组织|日常办理"
+      ]
+    }
+  ],
+  "kinds": {
+    "news": [
+      "喜报|活动回顾|圆满结束|成功举办|工作总结|工作纪实|新闻报道|(?:我校|我院|学子|学生).{0,16}(?:荣获|获得).{0,12}(?:奖学金|奖项|大奖|荣誉)"
+    ],
+    "policy": [
+      "管理办法|实施细则|办事指南|政策解读|常见问题|管理规定"
+    ],
+    "result": [
+      "结果公示|名单公示|评选结果|拟获奖|获奖名单"
+    ],
+    "update": [
+      "延期|延长|变更|更正|补充通知|取消|调整通知"
+    ],
+    "application": [
+      "报名|申报|申请|招募"
+    ],
+    "arrangement": [
+      "安排|办理|提交|通知"
+    ]
+  },
+  "excluded_patterns": [
+    "教师招聘|教职工招聘|辅导员招聘|采购.{0,10}公告|采购招标|招标公告|教师教学竞赛|教职工.{0,8}考核"
+  ],
+  "appeal_patterns": [
+    "如有.{0,6}(?:异议|疑问)|(?:提出|提交|受理|反馈).{0,8}(?:异议|申诉)|(?:异议|申诉).{0,12}(?:受理|截止|提交|反馈|提出)|申诉期|异议期|复核申请"
+  ],
+  "participation_required_patterns": [
+    "结题|提交.{0,8}材料|材料.{0,8}提交|答辩|确认参赛|签到|缴费"
+  ],
+  "priorities": {
+    "1": "关键事项",
+    "2": "值得把握的机会",
+    "3": "一般活动与日常办理",
+    "4": "生活提示与参考"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "version_conflict",
+    "message": "个人资料已更新，请重新读取后再保存",
+    "request_id": "36dfd339de714b3a9eb971456f8ce21b"
+  }
+}

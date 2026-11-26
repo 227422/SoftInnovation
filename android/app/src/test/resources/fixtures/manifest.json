@@ -1,0 +1,436 @@
+{
+  "synthetic": true,
+  "description": "合成协议样例。虚构通知、院校、政策、标签和ID，不能视为真实来源或用于生产提交。",
+  "positive": [
+    {
+      "file": "feed-page.json",
+      "schema": "FeedPage"
+    },
+    {
+      "file": "follow-page.json",
+      "schema": "FollowPage"
+    },
+    {
+      "file": "notice-detail-partial.json",
+      "schema": "NoticeDetail"
+    },
+    {
+      "file": "notice-detail-title-only.json",
+      "schema": "NoticeDetail"
+    },
+    {
+      "file": "follow-state.json",
+      "schema": "FollowState"
+    },
+    {
+      "file": "follow-update-max.json",
+      "schema": "FollowUpdate"
+    },
+    {
+      "file": "coverage-view.json",
+      "schema": "CoverageView"
+    },
+    {
+      "file": "profile-update.json",
+      "schema": "ProfileUpdate"
+    },
+    {
+      "file": "preferences-update.json",
+      "schema": "PreferencesUpdate"
+    },
+    {
+      "file": "validation-error.json",
+      "schema": "ErrorEnvelope"
+    }
+  ],
+  "negative": [
+    {
+      "name": "非法类别",
+      "file": "feed-page.json",
+      "schema": "FeedPage",
+      "path": [
+        "items",
+        0,
+        "category"
+      ],
+      "value": "scope"
+    },
+    {
+      "name": "缺时区的时间",
+      "file": "feed-page.json",
+      "schema": "FeedPage",
+      "path": [
+        "items",
+        0,
+        "published_at"
+      ],
+      "value": "2026-11-08T16:30:00"
+    },
+    {
+      "name": "缺少必有可空字段",
+      "file": "feed-page.json",
+      "schema": "FeedPage",
+      "path": [
+        "last_updated_at"
+      ],
+      "remove": true
+    },
+    {
+      "name": "错误首页排序标识",
+      "file": "feed-page.json",
+      "schema": "FeedPage",
+      "path": [
+        "ranking_strategy_version"
+      ],
+      "value": "follow-time-v1"
+    },
+    {
+      "name": "错误关注排序标识",
+      "file": "follow-page.json",
+      "schema": "FollowPage",
+      "path": [
+        "ranking_strategy_version"
+      ],
+      "value": "benefit-tier-v1"
+    },
+    {
+      "name": "错误窗口精度对应",
+      "file": "follow-page.json",
+      "schema": "FollowPage",
+      "path": [
+        "items",
+        0,
+        "time_windows",
+        0,
+        "start",
+        "precision"
+      ],
+      "value": "datetime"
+    },
+    {
+      "name": "缺少窗口受众完整性",
+      "file": "follow-page.json",
+      "schema": "FollowPage",
+      "path": [
+        "items",
+        0,
+        "time_windows",
+        0,
+        "audience_complete"
+      ],
+      "remove": true
+    },
+    {
+      "name": "缺少匹配条件状态",
+      "file": "follow-page.json",
+      "schema": "FollowPage",
+      "path": [
+        "items",
+        0,
+        "match",
+        "conditions",
+        0,
+        "state"
+      ],
+      "remove": true
+    },
+    {
+      "name": "缺少事实版本",
+      "file": "notice-detail-partial.json",
+      "schema": "NoticeDetail",
+      "path": [
+        "evaluation_context",
+        "facts_version"
+      ],
+      "remove": true
+    },
+    {
+      "name": "缺少嵌套定位字段",
+      "file": "notice-detail-partial.json",
+      "schema": "NoticeDetail",
+      "path": [
+        "evidence_refs",
+        0,
+        "locator",
+        "page"
+      ],
+      "remove": true
+    },
+    {
+      "name": "正文可空但不可省略",
+      "file": "notice-detail-title-only.json",
+      "schema": "NoticeDetail",
+      "path": [
+        "body"
+      ],
+      "remove": true
+    },
+    {
+      "name": "不接受字符串布尔",
+      "file": "follow-update-max.json",
+      "schema": "FollowUpdate",
+      "path": [
+        "starred"
+      ],
+      "value": "false"
+    },
+    {
+      "name": "版本超过可递增范围",
+      "file": "follow-update-max.json",
+      "schema": "FollowUpdate",
+      "path": [
+        "expected_version"
+      ],
+      "value": 9223372036854775807
+    },
+    {
+      "name": "不接受布尔版本",
+      "file": "follow-update-max.json",
+      "schema": "FollowUpdate",
+      "path": [
+        "expected_version"
+      ],
+      "value": true
+    },
+    {
+      "name": "不接受额外 toggle",
+      "file": "follow-update-max.json",
+      "schema": "FollowUpdate",
+      "path": [
+        "toggle"
+      ],
+      "value": true
+    },
+    {
+      "name": "不接受显式空本科身份",
+      "file": "profile-update.json",
+      "schema": "ProfileUpdate",
+      "path": [
+        "education_stage"
+      ],
+      "value": null
+    },
+    {
+      "name": "拒绝越界入学年份",
+      "file": "profile-update.json",
+      "schema": "ProfileUpdate",
+      "path": [
+        "admission_year"
+      ],
+      "value": 1899
+    },
+    {
+      "name": "禁止客户端写专业大类",
+      "file": "profile-update.json",
+      "schema": "ProfileUpdate",
+      "path": [
+        "major_group"
+      ],
+      "value": null
+    },
+    {
+      "name": "偏好不接受重复ID",
+      "file": "preferences-update.json",
+      "schema": "PreferencesUpdate",
+      "path": [
+        "skill_ids"
+      ],
+      "value": [
+        "sample-skill",
+        "sample-skill"
+      ]
+    },
+    {
+      "name": "偏好单组超过100项",
+      "file": "preferences-update.json",
+      "schema": "PreferencesUpdate",
+      "path": [
+        "course_ids"
+      ],
+      "value": [
+        "sample-000",
+        "sample-001",
+        "sample-002",
+        "sample-003",
+        "sample-004",
+        "sample-005",
+        "sample-006",
+        "sample-007",
+        "sample-008",
+        "sample-009",
+        "sample-010",
+        "sample-011",
+        "sample-012",
+        "sample-013",
+        "sample-014",
+        "sample-015",
+        "sample-016",
+        "sample-017",
+        "sample-018",
+        "sample-019",
+        "sample-020",
+        "sample-021",
+        "sample-022",
+        "sample-023",
+        "sample-024",
+        "sample-025",
+        "sample-026",
+        "sample-027",
+        "sample-028",
+        "sample-029",
+        "sample-030",
+        "sample-031",
+        "sample-032",
+        "sample-033",
+        "sample-034",
+        "sample-035",
+        "sample-036",
+        "sample-037",
+        "sample-038",
+        "sample-039",
+        "sample-040",
+        "sample-041",
+        "sample-042",
+        "sample-043",
+        "sample-044",
+        "sample-045",
+        "sample-046",
+        "sample-047",
+        "sample-048",
+        "sample-049",
+        "sample-050",
+        "sample-051",
+        "sample-052",
+        "sample-053",
+        "sample-054",
+        "sample-055",
+        "sample-056",
+        "sample-057",
+        "sample-058",
+        "sample-059",
+        "sample-060",
+        "sample-061",
+        "sample-062",
+        "sample-063",
+        "sample-064",
+        "sample-065",
+        "sample-066",
+        "sample-067",
+        "sample-068",
+        "sample-069",
+        "sample-070",
+        "sample-071",
+        "sample-072",
+        "sample-073",
+        "sample-074",
+        "sample-075",
+        "sample-076",
+        "sample-077",
+        "sample-078",
+        "sample-079",
+        "sample-080",
+        "sample-081",
+        "sample-082",
+        "sample-083",
+        "sample-084",
+        "sample-085",
+        "sample-086",
+        "sample-087",
+        "sample-088",
+        "sample-089",
+        "sample-090",
+        "sample-091",
+        "sample-092",
+        "sample-093",
+        "sample-094",
+        "sample-095",
+        "sample-096",
+        "sample-097",
+        "sample-098",
+        "sample-099",
+        "sample-100"
+      ]
+    },
+    {
+      "name": "拒绝客户端指定账号",
+      "file": "preferences-update.json",
+      "schema": "PreferencesUpdate",
+      "path": [
+        "user_id"
+      ],
+      "value": "sample-other-account"
+    },
+    {
+      "name": "details 可省略不可空",
+      "file": "validation-error.json",
+      "schema": "ErrorEnvelope",
+      "path": [
+        "error",
+        "details"
+      ],
+      "value": null
+    },
+    {
+      "name": "校级政策 college_id 可空不可省略",
+      "file": "coverage-view.json",
+      "schema": "CoverageView",
+      "path": [
+        "policies",
+        0,
+        "college_id"
+      ],
+      "remove": true
+    }
+  ],
+  "behavior_cases": [
+    {
+      "layer": "runtime-v1",
+      "case": "expected_version 与 admission_year 拒绝整数形状浮点数 1.0（Schema integer 会接受）"
+    },
+    {
+      "layer": "runtime-v1",
+      "case": "未知与跨类偏好 ID 由实际目录校验，返回 422 validation_error"
+    },
+    {
+      "layer": "planned-v2",
+      "case": "offset>0 缺少 expected_revision 返回 422；版本不符返回 409 feed_changed"
+    },
+    {
+      "layer": "planned-v2",
+      "case": "证据的 ID、原文位置、来源种类与来源版本必须对应；分段内容不能跨版本拼接"
+    },
+    {
+      "layer": "planned-v2",
+      "case": "同一条目的上下文、版本和标签互相一致；旧关注响应不能覆盖新关注版本"
+    }
+  ],
+  "pagination_queries": [
+    {
+      "name": "省略 offset 使用第一页",
+      "query": {},
+      "valid": true
+    },
+    {
+      "name": "明确刷新第一页",
+      "query": {
+        "offset": 0
+      },
+      "valid": true
+    },
+    {
+      "name": "后续页缺少 expected_revision",
+      "query": {
+        "offset": 1
+      },
+      "valid": false
+    },
+    {
+      "name": "后续页携带第一页版本",
+      "query": {
+        "offset": 1,
+        "expected_revision": "sample-revision-1"
+      },
+      "valid": true
+    }
+  ]
+}

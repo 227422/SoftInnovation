@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "college_not_available",
+    "message": "学院不存在、已停用或不属于所选学校，请重新选择",
+    "request_id": "a3652160b2bb4a7ba4f54fdc889200c4"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "csrf_invalid",
+    "message": "安全校验失败，请刷新后重试",
+    "request_id": "76587675dc9c4119941fd719cffafc82"
+  }
+}

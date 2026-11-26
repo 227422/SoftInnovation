@@ -1,0 +1,7 @@
+{
+  "error": {
+    "code": "school_not_supported",
+    "message": "学校不存在或暂未支持，请重新选择",
+    "request_id": "d8caff67fe4946d4a5180291d893f327"
+  }
+}

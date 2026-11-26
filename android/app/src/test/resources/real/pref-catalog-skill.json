@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "id": "skill_python",
+      "name": "Python编程"
+    },
+    {
+      "id": "skill_data_analysis",
+      "name": "数据分析"
+    },
+    {
+      "id": "skill_writing",
+      "name": "文字写作"
+    },
+    {
+      "id": "skill_design",
+      "name": "平面设计"
+    },
+    {
+      "id": "skill_presentation",
+      "name": "演讲表达"
+    }
+  ],
+  "message": "这些选项仅供用户自述，非资格核验"
+}
