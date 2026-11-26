@@ -1,53 +1,84 @@
-# ===== Android 配置 =====
-*.iml
-.gradle/
-/local.properties
-/.idea/
+# ==========================================================
+# 知要 / SoftInnovation .gitignore
+# 原则：只忽略「可重新生成的产物」和「本机专属配置」，
+#      源码、依赖锁文件、gradle-wrapper.jar、测试夹具必须保留。
+# ==========================================================
+
+# ---------- 系统残留 ----------
 .DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------- IDE / 编辑器（不写开头斜杠，任意层级都生效）----------
+.idea/
+*.iml
+.vscode/
+*.code-workspace
+*.swp
+*~
+
+# ---------- Android / Gradle ----------
+.gradle/
 build/
-/captures
-.externalNativeBuild
-.cxx
+captures/
+.externalNativeBuild/
+.cxx/
+.kotlin/
+local.properties
 *.apk
 *.aab
 *.ap_
 *.dex
 *.class
+*.hprof
 *.jks
 *.keystore
+# gradle-wrapper.jar 是构建必需的，故意不忽略
 
-# ===== Python 后端配置 =====
+# ---------- Python ----------
 __pycache__/
 *.py[cod]
 *$py.class
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib64/
-parts/
-sdist/
-var/
-wheels/
 *.egg-info/
+.eggs/
+egg-info/
+dist/
+sdist/
+wheels/
+develop-eggs/
+downloads/
+parts/
+var/
+.Python
 .installed.cfg
 *.egg
-venv/
+build/
 .venv/
+venv/
 ENV/
+env/
 env.bak/
 venv.bak/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
 
-# ===== 系统或编辑器配置 =====
-.DS_Store
-Thumbs.db
-.vscode/
+# ---------- 本项目运行时数据（每次启动都会变，绝不能进仓库）----------
+backend/.runtime/
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+
+# ---------- 密钥 / 环境变量 ----------
+.env
+.env.*
+!.env.example
+
+# ---------- 工具与本地大文件夹 ----------
 .workbuddy/
-
-# ===== 你之前提到的超大文件夹 =====
 安装包/
 通知/
