@@ -545,7 +545,12 @@ data class NoticeDetail(
         get() = sources.firstOrNull { !it.description.isNullOrBlank() }?.description
 }
 
-data class CatalogNode(val id: String, val name: String)
+data class CatalogNode(
+    val id: String,
+    val name: String,
+    /** 选项的第二行小字（例如「只打性价比高的」）；目录类条目通常为空。 */
+    val hint: String? = null,
+)
 
 /** 目录响应：条目可能为空，[message] 由后端说明原因（例如课程目录待核验）。 */
 data class CatalogPage(

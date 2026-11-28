@@ -28,6 +28,7 @@ import campus.app.core.LocalAppContainer
 import campus.app.core.data.PageResult
 import campus.app.core.model.NoticePage
 import campus.app.core.model.PreferenceKind
+import campus.app.feature.goals.COMPETITION_PREFIX
 import campus.app.core.network.ApiError
 import campus.app.core.network.ApiResult
 import campus.app.core.ui.describe
@@ -65,7 +66,7 @@ fun HomeScreen(
         if (goalIds.isEmpty()) return@LaunchedEffect
         val options = (container.profile.preferenceOptions(PreferenceKind.GOAL) as? ApiResult.Success)?.value
         goalLabels = options?.items.orEmpty()
-            .filter { it.id in goalIds }
+            .filter { it.id in goalIds && it.id.startsWith(COMPETITION_PREFIX) }
             .map { it.name }
     }
 
@@ -93,7 +94,11 @@ fun HomeScreen(
             verticalAlignment = Alignment.CenterVertically,
         ) {
             Text(
-                text = goalLabels.singleOrNull() ?: "为你推荐",
+                text = when (goalLabels.size) {
+                    0 -> "为你推荐"
+                    1 -> goalLabels.first()
+                    else -> "你的比赛"
+                },
                 style = MaterialTheme.typography.titleLarge,
                 fontWeight = FontWeight.SemiBold,
                 maxLines = 1,

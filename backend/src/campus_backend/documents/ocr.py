@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import importlib.util
 import json
 import os
 from pathlib import Path
@@ -77,9 +78,43 @@ class MacVisionOCR:
             raise ExtractionError('ocr_failed', 'Vision OCR输出无效') from exc
 
 
+class RapidOCREngine:
+    """随项目安装的中文 OCR（onnxruntime），不依赖系统装什么。
+
+    模型在首次识别时加载并常驻；调用方已经用线程加超时兜住，这里只负责识别。
+    """
+
+    def __init__(self):
+        self._engine = None
+        self._load_lock = Lock()
+
+    def _model(self):
+        with self._load_lock:
+            if self._engine is None:
+                from rapidocr_onnxruntime import RapidOCR
+                self._engine = RapidOCR()
+            return self._engine
+
+    def recognize(self, path: Path, *, timeout: float) -> str:
+        try:
+            engine = self._model()
+        except Exception as exc:
+            raise ExtractionError('ocr_unavailable', '本机OCR引擎未安装或加载失败') from exc
+        try:
+            lines, _ = engine(str(path))
+        except Exception as exc:
+            raise ExtractionError('ocr_failed', 'OCR识别失败') from exc
+        text = '\n'.join(item[1] for item in (lines or []) if len(item) > 2 and item[1])
+        if not text.strip():
+            raise ExtractionError('ocr_empty', 'OCR未识别出文字')
+        return text.strip()
+
+
 def default_ocr(cache_dir: Path):
     if sys.platform == 'darwin' and shutil.which('swiftc'):
         return MacVisionOCR(cache_dir)
     if shutil.which('tesseract'):
         return TesseractOCR()
+    if importlib.util.find_spec('rapidocr_onnxruntime') is not None:
+        return RapidOCREngine()
     return UnavailableOCR()

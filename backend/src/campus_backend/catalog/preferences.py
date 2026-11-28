@@ -18,6 +18,7 @@ class PreferenceOption(BaseModel):
 
     id: str
     name: str
+    hint: str | None = None
 
 
 class PreferenceOptions(BaseModel):

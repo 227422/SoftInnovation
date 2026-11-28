@@ -11,6 +11,8 @@ dependencies = ["fastapi==0.162.0", "starlette==0.52.1", "uvicorn==0.54.0", "SQL
 
 [project.optional-dependencies]
 test = ["pytest==9.2.0", "jsonschema==4.26.0", "xlwt==1.3.0"]
+# 正文在 PDF/图片里的通知需要这两项：RapidOCR 负责识别，PyMuPDF 负责把扫描页渲染成图片。
+ocr = ["rapidocr-onnxruntime==1.2.3", "pymupdf==2.2"]
 
 [project.scripts]
 campus-backend = "campus_backend.cli:main"

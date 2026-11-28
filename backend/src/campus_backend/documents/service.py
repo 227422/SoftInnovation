@@ -152,9 +152,23 @@ def _ocr_input(path):
 
 def _scan_page(pdf, page, directory, timeout):
     tool = shutil.which('pdftoppm')
-    if not tool:
-        raise ExtractionError('ocr_unavailable', '扫描PDF需要pdftoppm转换工具')
     output = directory / f'page-{page}'
+    if not tool:
+        # 没装 Poppler 时用 PyMuPDF 渲染，省掉一个系统依赖。
+        try:
+            import pymupdf
+        except ImportError as exc:
+            raise ExtractionError('ocr_unavailable', '扫描PDF需要pdftoppm或PyMuPDF转换工具') from exc
+        try:
+            with pymupdf.open(str(pdf)) as document:
+                pixmap = document.load_page(page - 1).get_pixmap(dpi=200)
+                image = output.with_suffix('.png')
+                pixmap.save(str(image))
+        except Exception as exc:
+            raise ExtractionError('ocr_failed', 'PDF页面无法转换为图片') from exc
+        if not image.is_file():
+            raise ExtractionError('ocr_failed', 'PDF页面无法转换为图片')
+        return image
     env = None
     if 'FONTCONFIG_FILE' not in os.environ:
         # Relocated Poppler installs may have a config outside fontconfig's default path.

@@ -1,5 +1,6 @@
 """Small restartable scheduler. Jobs and stages use ports, never database sessions."""
 import logging
+import os
 import time
 from datetime import datetime, timezone
 from urllib.parse import urlsplit
@@ -12,6 +13,10 @@ from .http import FetchError
 from .service import CollectionService, job_id, notice_id, title_only
 
 logger=logging.getLogger(__name__)
+
+# 每个栏目最多回翻几页历史。通知的时效性都落在前几页，翻到底只会把几年前的
+# 公示重新捞一遍；需要更深的存档时用 CAMPUS_HISTORY_PAGES 调大。
+HISTORY_PAGES = int(os.environ.get('CAMPUS_HISTORY_PAGES', '3'))
 
 
 class CollectorWorker:
@@ -36,9 +41,12 @@ class CollectorWorker:
                 self.jobs.enqueue(job_id('detail',source['source_id'],item['url']),'detail',source['source_id'],item,
                                   self.clock(),repeat=True,parent=job)
         history_added=False
+        depth=job['payload'].get('depth',0)
         for next_url in parsed['next_urls']:
+            if depth>=HISTORY_PAGES:
+                break
             added=self.jobs.enqueue(job_id('history',source['source_id'],next_url),'history',source['source_id'],
-                                    {'url':next_url},self.clock(),parent=job)
+                                    {'url':next_url,'depth':depth+1},self.clock(),parent=job)
             history_added=history_added or added
         mode=source.get('history_mode')
         if mode in ('unknown','restricted'):

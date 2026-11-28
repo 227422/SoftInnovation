@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>知要 · 离线演示版</title>
+<style>
+  :root{
+    --ink:#1c1b19;
+    --ink-2:#5c5852;
+    --ink-3:#8d8880;
+    --line:#e6e1d8;
+    --paper:#fbf9f4;
+    --card:#ffffff;
+    --brand:#2f6f5e;
+    --brand-dark:#255949;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    padding:40px 20px 56px;
+  }
+  .wrap{width:100%;max-width:430px}
+  .brand{
+    display:flex;align-items:center;gap:10px;
+    margin-bottom:28px;
+  }
+  .logo{
+    width:38px;height:38px;border-radius:11px;
+    background:var(--brand);
+    color:#fff;font-size:17px;font-weight:600;
+    display:flex;align-items:center;justify-content:center;
+    letter-spacing:.5px;
+  }
+  .brand-name{font-size:16px;font-weight:600;letter-spacing:1px}
+  .brand-sub{font-size:12px;color:var(--ink-3);margin-top:2px}
+  h1{
+    font-size:26px;line-height:1.35;font-weight:600;
+    margin:0 0 12px;letter-spacing:.2px;
+  }
+  .lede{
+    font-size:15px;line-height:1.7;color:var(--ink-2);
+    margin:0 0 26px;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    padding:22px 20px;
+    margin-bottom:18px;
+  }
+  .btn{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    width:100%;
+    background:var(--brand);
+    color:#fff;text-decoration:none;
+    font-size:16px;font-weight:600;
+    padding:15px 18px;border-radius:12px;
+    transition:background .15s ease;
+  }
+  .btn:active{background:var(--brand-dark)}
+  .btn-meta{
+    text-align:center;font-size:12.5px;color:var(--ink-3);
+    margin-top:11px;
+  }
+  .manual{
+    display:none;
+    margin-top:16px;padding-top:14px;
+    border-top:1px dashed var(--line);
+    font-size:11.5px;line-height:1.6;color:var(--ink-3);
+    word-break:break-all;
+  }
+  .manual.show{display:block}
+  .manual code{
+    display:block;margin-top:6px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+    font-size:11px;color:var(--ink-2);
+    background:#f5f2ea;border-radius:6px;padding:8px 9px;
+  }
+  .steps{margin:0;padding:0;list-style:none}
+  .steps li{
+    display:flex;gap:12px;
+    font-size:14px;line-height:1.65;color:var(--ink-2);
+    padding:12px 0;
+    border-top:1px solid var(--line);
+  }
+  .steps li:first-child{border-top:none;padding-top:0}
+  .steps li:last-child{padding-bottom:0}
+  .num{
+    flex:0 0 22px;height:22px;border-radius:50%;
+    background:#f1ede4;color:var(--ink-2);
+    font-size:12px;font-weight:600;
+    display:flex;align-items:center;justify-content:center;
+    margin-top:1px;
+  }
+  .section-title{
+    font-size:13px;font-weight:600;color:var(--ink-3);
+    letter-spacing:1.2px;margin:0 0 14px;
+  }
+  .note{
+    font-size:12.5px;line-height:1.75;color:var(--ink-3);
+    margin:22px 0 0;padding-top:18px;
+    border-top:1px solid var(--line);
+  }
+  .note strong{color:var(--ink-2);font-weight:600}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">
+      <div class="logo">知要</div>
+      <div>
+        <div class="brand-name">知要</div>
+        <div class="brand-sub">校园通知助手 · 离线演示版</div>
+      </div>
+    </div>
+
+    <h1>装到手机上，断网也能用</h1>
+    <p class="lede">这是给评审和同学看的演示包。11 条真实校园通知已经打包在应用里，打开就能浏览、筛选、看详情，不需要连电脑，也不需要登录服务器。</p>
+
+    <div class="card">
+      <a class="btn" id="dl" href="./zh-iyao-demo.apk?sharecode=Y5UAAEHFYZ" download="知要-demo.apk">下载安装包</a>
+      <div class="btn-meta">Android · 约 13 MB · 与正式版互不影响</div>
+      <div class="manual" id="manual"></div>
+    </div>
+
+    <div class="card">
+      <p class="section-title">安装步骤</p>
+      <ol class="steps">
+        <li><span class="num">1</span><span>点上方按钮下载，等进度条走完。</span></li>
+        <li><span class="num">2</span><span>在通知栏或「文件管理 → 下载」里点开安装包；系统提示「禁止安装未知应用」时，允许当前浏览器安装。</span></li>
+        <li><span class="num">3</span><span>装好后桌面会出现「知要 demo」，打开即可，无需任何配置。</span></li>
+      </ol>
+    </div>
+
+    <p class="note">
+      <strong>点按钮没反应、提示「没有下载权限」？</strong>说明下载地址丢了分享码。把下面这条地址整条复制到浏览器地址栏打开，会直接开始下载。<br>
+      <strong>微信、QQ、应用内浏览器会拦 APK</strong>，请点右上角「…」选择「在浏览器打开」。<br>
+      <strong>演示数据</strong>来自人文学院通知公告的真实快照，用于展示阅读、筛选与信息层级，不代表全部栏目。
+    </p>
+  </div>
+  <script>
+    (function () {
+      var code = new URLSearchParams(location.search).get('sharecode');
+      var a = document.getElementById('dl');
+      var box = document.getElementById('manual');
+      if (!code) return;
+      var url = new URL(a.getAttribute('href'), location.href);
+      url.searchParams.set('sharecode', code);
+      a.href = url.toString();
+      box.className = 'manual show';
+      box.innerHTML = '下载地址（长按复制到浏览器打开）：<code></code>';
+      box.querySelector('code').textContent = url.toString();
+    })();
+  </script>
+</body>
+</html>

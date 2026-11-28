@@ -7,6 +7,8 @@ from campus_backend.collection.html import parse_detail, parse_list
 
 ROOT = Path(__file__).resolve().parents[2]
 REGISTRY = ROOT / "backend/src/campus_backend/sources/data/runtime_registry.json"
+# 精简后的注册表只保留抓取范围；这些用例验证的是解析配置，配置本身留在全量归档里。
+ARCHIVE = REGISTRY.parent / "runtime_registry.full.json"
 
 CASES = [
     ("csu-lib-5155695ea066", "lib", "/index/tzgg.htm", "3610"),
@@ -20,8 +22,21 @@ CASES = [
 
 
 def source(source_id):
+    for path in (REGISTRY, ARCHIVE):
+        if not path.exists():
+            continue
+        registry = json.loads(path.read_text(encoding="utf-8"))
+        for row in registry["sources"]:
+            if row["source_id"] == source_id:
+                return row
+    raise AssertionError(f"来源 {source_id} 在注册表与归档中都不存在")
+
+
+def test_registry_pages_are_unique():
     registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
-    return next(row for row in registry["sources"] if row["source_id"] == source_id)
+    pages = [row["url"].split("?")[0].rstrip("/").lower() for row in registry["sources"]]
+    assert len(pages) == len(set(pages))
+    assert all(row["status"] == "enabled" for row in registry["sources"])
 
 
 @pytest.mark.parametrize(("source_id", "department", "path", "section"), CASES)

@@ -21,6 +21,8 @@ import campus.app.core.session.SessionState
 import campus.app.feature.auth.AuthScreen
 import campus.app.feature.detail.DetailScreen
 import campus.app.feature.goals.GoalsScreen
+import campus.app.feature.goals.NoticePrefsScreen
+import campus.app.feature.goals.splitIds
 import campus.app.feature.main.MainScreen
 import campus.app.feature.main.MainTab
 import campus.app.feature.more.MoreCategoriesScreen
@@ -102,11 +104,16 @@ private fun AppNavigation() {
         is Screen.ProfileSetup -> ProfileSetupScreen(
             continueLabel = if (screen.onboarding) "下一步" else "保存",
             onContinue = {
-                navigateTo(if (screen.onboarding) Screen.Goals else Screen.Main)
+                navigateTo(if (screen.onboarding) Screen.Competition else Screen.Main)
             },
         )
 
-        is Screen.Goals -> GoalsScreen(
+        is Screen.Competition -> GoalsScreen(
+            onNext = { ids -> navigateTo(Screen.NoticePrefs(ids.joinToString(","))) },
+        )
+
+        is Screen.NoticePrefs -> NoticePrefsScreen(
+            competitionIds = splitIds(screen.competitionCsv),
             onDone = { navigateTo(Screen.Main) },
         )
 
@@ -116,7 +123,7 @@ private fun AppNavigation() {
             onOpenNotice = { noticeId -> navigateTo(Screen.Detail(noticeId)) },
             onOpenMore = { navigateTo(Screen.MoreCategories) },
             onEditProfile = { navigateTo(Screen.ProfileSetup(onboarding = false)) },
-            onOpenGoals = { navigateTo(Screen.Goals) },
+            onOpenGoals = { navigateTo(Screen.Competition) },
             onLoggedOut = { navigateTo(Screen.Auth) },
         )
 
@@ -138,7 +145,8 @@ private val ScreenSaver = Saver<Screen, String>(
         when (screen) {
             is Screen.Auth -> "auth"
             is Screen.ProfileSetup -> "profile:${screen.onboarding}"
-            is Screen.Goals -> "goals"
+            is Screen.Competition -> "competition"
+            is Screen.NoticePrefs -> "notices:${screen.competitionCsv}"
             is Screen.Main -> "main"
             is Screen.MoreCategories -> "more"
             is Screen.Detail -> "detail:${screen.noticeId}"
@@ -149,7 +157,9 @@ private val ScreenSaver = Saver<Screen, String>(
             raw == "auth" -> Screen.Auth
             raw == "profile" -> Screen.ProfileSetup()
             raw.startsWith("profile:") -> Screen.ProfileSetup(raw.removePrefix("profile:").toBoolean())
-            raw == "goals" -> Screen.Goals
+            raw == "competition" -> Screen.Competition
+            raw == "goals" -> Screen.Competition
+            raw.startsWith("notices:") -> Screen.NoticePrefs(raw.removePrefix("notices:"))
             raw == "main" || raw == "home" -> Screen.Main
             raw == "more" -> Screen.MoreCategories
             raw.startsWith("detail:") -> Screen.Detail(raw.removePrefix("detail:"))

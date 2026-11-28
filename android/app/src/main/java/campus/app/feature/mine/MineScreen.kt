@@ -28,6 +28,8 @@ import campus.app.core.model.PreferenceKind
 import campus.app.core.model.ProfileResponse
 import campus.app.core.network.ApiResult
 import campus.app.core.ui.describe
+import campus.app.feature.goals.COMPETITION_PREFIX
+import campus.app.feature.goals.NOTICE_PREFIX
 import campus.app.feature.common.AppCard
 import kotlinx.coroutines.launch
 
@@ -60,21 +62,22 @@ fun MineScreen(
         }
         profileLoading = false
 
-        // 目标名称：从偏好里取 id，再在目标目录里换成文字。
+        // 画像：比赛方向 + 希望收到的通知类数，合成一行短描述。
         val preferences = (container.profile.loadPreferences() as? ApiResult.Success)?.value
         val goalIds = preferences?.goalIds.orEmpty()
-        goalLabel = if (goalIds.isEmpty()) {
-            null
-        } else {
-            val options = (container.profile.preferenceOptions(PreferenceKind.GOAL) as? ApiResult.Success)?.value
-            val names = options?.items.orEmpty()
-                .filter { it.id in goalIds }
-                .map { it.name }
-            when {
-                names.isEmpty() -> null
-                names.size == 1 -> names.first()
-                else -> "${names.first()} 等 ${names.size} 项"
-            }
+        val options = (container.profile.preferenceOptions(PreferenceKind.GOAL) as? ApiResult.Success)?.value
+        val compNames = options?.items.orEmpty()
+            .filter { it.id in goalIds && it.id.startsWith(COMPETITION_PREFIX) }
+            .map { it.name }
+        val noticeCount = goalIds.count { it.startsWith(NOTICE_PREFIX) }
+        val noticeText = "接收 $noticeCount 种通知"
+        goalLabel = when {
+            goalIds.isEmpty() -> null
+            compNames.isEmpty() && noticeCount == 0 -> null
+            compNames.isEmpty() -> noticeText
+            noticeCount == 0 -> compNames.joinToString("、")
+            compNames.size == 1 -> "${compNames.first()} · $noticeText"
+            else -> "${compNames.first()} 等 ${compNames.size} 项 · $noticeText"
         }
     }
 

@@ -82,3 +82,9 @@ backend/.runtime/
 .workbuddy/
 安装包/
 通知/
+# 发布到 WorkBuddy 的应用标记文件
+.wbapp_*.genie
+# pytest 临时目录
+pytest-of-*/
+# demo 分发目录里的安装包（13MB，不进仓库）
+demo-web/*.apk

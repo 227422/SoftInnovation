@@ -1,22 +1,85 @@
 {
-  "course": [],
-  "skill": [
-    {"id": "skill_python", "name": "Python编程"},
-    {"id": "skill_data_analysis", "name": "数据分析"},
-    {"id": "skill_writing", "name": "文字写作"},
-    {"id": "skill_design", "name": "平面设计"},
-    {"id": "skill_presentation", "name": "演讲表达"}
-  ],
-  "goal": [
-    {"id": "goal_research", "name": "了解科研机会"},
-    {"id": "goal_competition", "name": "参与学科竞赛"},
-    {"id": "goal_further_study", "name": "了解升学交流"},
-    {"id": "goal_employment", "name": "了解实习就业"}
-  ],
-  "interest": [
-    {"id": "interest_science_technology", "name": "科学与技术"},
-    {"id": "interest_humanities_social", "name": "人文与社会"},
-    {"id": "interest_arts_sports", "name": "文艺与体育"},
-    {"id": "interest_volunteering", "name": "志愿与社会实践"}
-  ]
+ "course": [],
+ "skill": [
+  {
+   "id": "skill_python",
+   "name": "Python编程"
+  },
+  {
+   "id": "skill_data_analysis",
+   "name": "数据分析"
+  },
+  {
+   "id": "skill_writing",
+   "name": "文字写作"
+  },
+  {
+   "id": "skill_design",
+   "name": "平面设计"
+  },
+  {
+   "id": "skill_presentation",
+   "name": "演讲表达"
+  }
+ ],
+ "goal": [
+  {
+   "id": "goal_comp_resume",
+   "name": "保研与简历",
+   "hint": "只打性价比高的"
+  },
+  {
+   "id": "goal_comp_major",
+   "name": "练专业能力",
+   "hint": "在本专业里深耕"
+  },
+  {
+   "id": "goal_comp_cross",
+   "name": "跨学科尝试",
+   "hint": "拓宽知识面"
+  },
+  {
+   "id": "goal_notice_research",
+   "name": "科研机会",
+   "hint": "实验室招人、项目立项"
+  },
+  {
+   "id": "goal_notice_further",
+   "name": "升学交流",
+   "hint": "保研、考研、交换"
+  },
+  {
+   "id": "goal_notice_career",
+   "name": "实习就业",
+   "hint": "招聘、宣讲、实习"
+  },
+  {
+   "id": "goal_notice_aid",
+   "name": "奖助评优",
+   "hint": "奖学金、评优、助学"
+  },
+  {
+   "id": "goal_notice_daily",
+   "name": "日常通知",
+   "hint": "选课、考试、生活服务"
+  }
+ ],
+ "interest": [
+  {
+   "id": "interest_science_technology",
+   "name": "科学与技术"
+  },
+  {
+   "id": "interest_humanities_social",
+   "name": "人文与社会"
+  },
+  {
+   "id": "interest_arts_sports",
+   "name": "文艺与体育"
+  },
+  {
+   "id": "interest_volunteering",
+   "name": "志愿与社会实践"
+  }
+ ]
 }

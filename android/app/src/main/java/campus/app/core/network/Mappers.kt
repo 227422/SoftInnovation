@@ -74,7 +74,7 @@ object Mappers {
 
     private fun node(o: JsonObject): CatalogNode? {
         val id = o.str("id") ?: return null
-        return CatalogNode(id = id, name = o.str("name") ?: id)
+        return CatalogNode(id = id, name = o.str("name") ?: id, hint = o.str("hint"))
     }
 
     /** 年级目录：value 是 1—8 的整数。 */
